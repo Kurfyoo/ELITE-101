@@ -18,7 +18,6 @@ def greet_user(name,age):
         print("Welcome, "+name+". My creator's the same age!")
     else:
         print("Welcome, "+name+". You are "+str(age-16)+" year(s) older than my creator!")
-
 def choice0():
     pass
 def choice1():
@@ -32,7 +31,6 @@ def exit():
     print("Glad if I could help "+name+". Goodbye!")
     sys.exit()
 choices = [choice0, choice1, choice2, choice3, exit]
-
 def menu():
     print("How can I help you?")
     print("0) [placeholder]")
@@ -42,7 +40,6 @@ def menu():
     print("4) exit")
     option = int(input("Enter a number (0-4): "))
     choices[option]()
-
 def main():
     intrro()
     name,age = get_info()
