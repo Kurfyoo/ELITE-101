@@ -1,4 +1,4 @@
-# Elite 101 Codespaces
+# Elite 101 Branches
 ## PRE-WORK
 Prework for 2L class; hypothetical chatbot service.<br>
 *This project was developed with assistance from GitHub Copilot.*<br>
