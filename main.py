@@ -20,12 +20,17 @@ def get_info():
     return name,age
 
 def greet_user(name,age):
-    if age < 16:
-        print("Welcome, "+name+". You are "+str(16-age)+" year(s) younger than my creator!")
-    elif age == 16:
+    diff = 16 - age
+    if diff > 0:
+        if diff == 1:
+            print("Welcome, "+name+". You are 1 year younger than my creator!")
+        print("Welcome, "+name+". You are "+str(diff)+" year(s) younger than my creator!")
+    elif diff == 0:
         print("Welcome, "+name+". My creator's the same age!")
-    else:
-        print("Welcome, "+name+". You are "+str(age-16)+" year(s) older than my creator!")
+    else: # diff < 0
+        if diff == -1:
+            print("Welcome, "+name+". You are 1 year older than my creator!")
+        print("Welcome, "+name+". You are "+str(-diff)+" years older than my creator!")
 
 class MenuHandler:
     def zero():
@@ -40,7 +45,7 @@ class MenuHandler:
         os.system("clear")
         print("Glad if I could help. Goodbye!")
         sys.exit()
-actions = [MenuHandler.zero, MenuHandler.one, MenuHandler.two, MenuHandler.three, MenuHandler.exit]
+    actions = [zero, one, two, three, exit]
 
 def menu():
     options = ["zero","one","two","three","exit"]
@@ -49,7 +54,7 @@ def menu():
         print(f"{idx}) {opt}")
     choice = int(input("\nEnter a number (0-4): "))
     os.system("clear")
-    actions[choice]()
+    MenuHandler.actions[choice]()
     return choice == 4
 
 def main():
